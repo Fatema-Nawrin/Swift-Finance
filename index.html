@@ -6,11 +6,57 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Swift Finance</title>
+    <!-- external css  -->
     <link rel="stylesheet" href="css/style.css">
+    <!-- tailwind css  -->
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
-<body>
-    <h1>Swift Finance</h1>
+<body class="w-3/4 mx-auto">
+    <header>
+        <h1 class="text-2xl lg:text-4xl text-center mt-8 font-semibold mb-12">Swift Finance</h1>
+    </header>
+    <main>
+        <div class="grid gap-4 lg:gap-10 grid-cols-1 lg:grid-cols-2">
+            <!-- image section  -->
+            <div>
+                <img src="images/moneys.jpg" alt="">
+            </div>
+            <!-- calculation section  -->
+            <div class="bg-neutral-100 text-center">
+                <!-- Income  -->
+                <h3 class="font-medium text-xl mt-12">Income</h3>
+                <div class="my-6">
+                    <span>Income:</span><input class="ml-2 py-1 w-1/3" type="text">
+                </div>
+                <!-- Expenses  -->
+                <h3 class="font-medium text-xl mb-4">Expenses</h3>
+                <div class="mb-4">
+                    <span>Foods:</span><input class="ml-4 py-1 w-1/3" type="text">
+                </div>
+                <div class="mb-4">
+                    <span>Rents:</span><input class="ml-5 py-1 w-1/3" type="text">
+                </div>
+                <div class="mb-4">
+                    <span>Clothes:</span><input class="ml-2 py-1 w-1/3" type="text">
+                </div>
+
+                <button class="px-6 lg:px-10 py-2 rounded btn-style">Calculate</button>
+                <!-- expenses calculation  -->
+                <h3 class="font-medium text-xl mt-4">Total Expenses:</h3>
+                <h3 class="font-medium text-xl m-2">Balance:</h3>
+                <!-- savings  -->
+                <div class="my-4">
+                    <span>Save: </span><input class="ml-2 py-1 w-1/3" type="text"> <span>%</span>
+                    <button class="m-2 px-8 lg:px-10 py-2 rounded btn-style">Save</button>
+                </div>
+                <!-- Saving calculation  -->
+                <h3 class="font-medium text-xl mb-3">Saving Amount:</h3>
+                <h3 class="font-medium text-xl mb-8">Remaining Balance:</h3>
+            </div>
+        </div>
+    </main>
+    <!-- javascript  -->
     <script src="js/app.js"></script>
 </body>
 
