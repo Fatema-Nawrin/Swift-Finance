@@ -1,10 +1,10 @@
 /* font link  */
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Roboto:wght@400;500&display=swap');
 
+/* different tags style */
 body{
     font-family: 'Roboto', sans-serif;
 }
-
 h1{
     font-family: 'Montserrat', sans-serif;
     color: #31A5AC;
@@ -12,6 +12,8 @@ h1{
 input{
     background-color: #DCDCDC;
 }
+
+/* button styles */
 .btn-style{
     background-color:#59A5FF;
     color: white;

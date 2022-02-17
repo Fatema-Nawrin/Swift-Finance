@@ -3,18 +3,17 @@ let balance = document.getElementById('balance');
 let remainingBalance = document.getElementById('remaining-balance')
 let savingAmount = document.getElementById('saving-amount');
 
-// function for calculating balance after expenses and savings 
+// Function for calculating balance after expenses and savings 
 function remainingValue(firstValue, secondValue) {
     const result = (firstValue - secondValue);
     return result.toFixed(2);
 }
 
-// function for all inputfield
-// 
+// Function for all inputfield
+
 function getInputValue(item) {
     const inputField = document.getElementById(item + '-input');
     const inputValue = inputField.value;
-
     // Error message for not putting number
     if (isNaN(inputValue)) {
         alert('Enter only number as ' + item + ' input');
@@ -22,7 +21,7 @@ function getInputValue(item) {
     }
     // Error message for negative number
     else if (inputValue < 0) {
-        alert('Please, Enter a positive number in ' + item + ' input field');
+        alert('Please, enter a positive number in ' + item + ' input field');
         inputField.value = '';
     }
     else {
@@ -36,15 +35,13 @@ document.getElementById('calculate-button').addEventListener('click', function (
     // Calculating expense & balance
     let totalInputExpenses = getInputValue('food') + getInputValue('rent') + getInputValue('clothes');
     let totalBalance = remainingValue(getInputValue('income'), totalInputExpenses);
-
     // showing 0 instead of NaN
     if (isNaN(totalInputExpenses) || isNaN(totalBalance)) {
         totalInputExpenses = 0;
         totalBalance = 0;
     }
 
-    totalExpenses.innerText = totalInputExpenses;
-
+    totalExpenses.innerText = totalInputExpenses.toFixed(2);
     // Error message if balance is larger than income
     if (totalBalance < 0) {
         alert('Expenses can not be greater than income');
@@ -59,20 +56,18 @@ document.getElementById('calculate-button').addEventListener('click', function (
 // Handling save button
 
 document.getElementById('save-button').addEventListener('click', function () {
-    // calculating savings & remaining money
+    // Calculating savings & remaining money
     let totalSaving = getInputValue('income') * (getInputValue('save') / 100);
     let totalRemainingBalance = remainingValue(parseFloat(balance.innerText), totalSaving);
-
-    // showing 0 instead of NaN
+    // Showing 0 instead of NaN
     if (isNaN(totalSaving) || isNaN(totalRemainingBalance)) {
         totalSaving = 0;
         totalRemainingBalance = 0;
     }
 
-    savingAmount.innerText = totalSaving;
-
-    // Error message if savings is larger than balnce 
-    if (totalSaving > totalRemainingBalance) {
+    savingAmount.innerText = totalSaving.toFixed(2);
+    // Error message if savings is larger than balance 
+    if (totalSaving > parseFloat(balance.innerText)) {
         alert('Do not have enough money to save');
         savingAmount.innerText = 0;
         remainingBalance.innerText = 0;
