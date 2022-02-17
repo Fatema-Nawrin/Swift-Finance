@@ -25,8 +25,8 @@ function getInputValue(item) {
         inputField.value = '';
     }
     else {
-        const inputValueNumber = parseFloat(inputValue).toFixed(2)
-        return parseFloat(inputValueNumber);
+        const inputValueNumber = parseFloat(inputValue);
+        return inputValueNumber;
     }
 }
 
