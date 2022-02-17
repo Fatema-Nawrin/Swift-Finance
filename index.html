@@ -18,44 +18,79 @@
     </header>
     <main>
         <div class="grid gap-4 lg:gap-10 grid-cols-1 lg:grid-cols-2">
-            <!-- image section  -->
+            <!-- Image section  -->
             <div>
                 <img src="images/moneys.jpg" alt="">
             </div>
-            <!-- calculation section  -->
+            <!-- Text section  -->
             <div class="bg-neutral-100 text-center">
                 <!-- Income  -->
                 <h3 class="font-medium text-xl mt-12">Income</h3>
-                <div class="my-6">
-                    <span>Income:</span><input class="ml-2 py-1 w-1/3" type="text">
-                </div>
+                <form class="w-3/4 md:w-2/3 mx-auto mt-4">
+                    <div class="flex items-center mb-4">
+                        <div class="w-1/3">
+                            <label>
+                                Income:
+                            </label>
+                        </div>
+                        <div class="w-2/3">
+                            <input id="income-input" class="rounded w-full p-1">
+                        </div>
+                    </div>
+                </form>
+
                 <!-- Expenses  -->
                 <h3 class="font-medium text-xl mb-4">Expenses</h3>
-                <div class="mb-4">
-                    <span>Foods:</span><input class="ml-4 py-1 w-1/3" type="text">
-                </div>
-                <div class="mb-4">
-                    <span>Rents:</span><input class="ml-5 py-1 w-1/3" type="text">
-                </div>
-                <div class="mb-4">
-                    <span>Clothes:</span><input class="ml-2 py-1 w-1/3" type="text">
-                </div>
+                <form class="w-3/4 md:w-2/3 mx-auto">
+                    <div class="flex items-center mb-4">
+                        <div class="w-1/3">
+                            <label class="">
+                                Food:
+                            </label>
+                        </div>
+                        <div class="w-2/3">
+                            <input id="food-input" class="rounded w-full p-1">
+                        </div>
+                    </div>
+                    <div class="flex items-center mb-4">
+                        <div class="w-1/3">
+                            <label>
+                                Rent:
+                            </label>
+                        </div>
+                        <div class="w-2/3">
+                            <input id="rent-input" class="rounded w-full p-1">
+                        </div>
+                    </div>
+                    <div class="flex items-center mb-4">
+                        <div class="w-1/3">
+                            <label>
+                                Clothes:
+                            </label>
+                        </div>
+                        <div class="w-2/3">
+                            <input id="clothes-input" class="rounded w-full p-1">
+                        </div>
+                    </div>
+                </form>
+                <button id="calculate-button" class="px-4 md:px-10 py-2 rounded btn-style">Calculate</button>
 
-                <button class="px-6 lg:px-10 py-2 rounded btn-style">Calculate</button>
-                <!-- expenses calculation  -->
-                <h3 class="font-medium text-xl mt-4">Total Expenses:</h3>
-                <h3 class="font-medium text-xl m-2">Balance:</h3>
-                <!-- savings  -->
+                <!-- Expenses calculation  -->
+                <h3 class="font-medium text-xl mt-4">Total Expenses: <span id="total-expenses">0</span> </h3>
+                <h3 class="font-medium text-xl m-2">Balance: <span id="balance">0</span> </h3>
+
+                <!-- Savings  -->
                 <div class="my-4">
-                    <span>Save: </span><input class="ml-2 py-1 w-1/3" type="text"> <span>%</span>
-                    <button class="m-2 px-8 lg:px-10 py-2 rounded btn-style">Save</button>
+                    <span>Save:</span><input id="save-input" class="ml-2 p-1 w-1/3 rounded" type="text"> <span>%</span>
+                    <button id="save-button" class="m-2 px-8 lg:px-10 py-2 rounded btn-style">Save</button>
                 </div>
                 <!-- Saving calculation  -->
-                <h3 class="font-medium text-xl mb-3">Saving Amount:</h3>
-                <h3 class="font-medium text-xl mb-8">Remaining Balance:</h3>
+                <h3 class="font-medium text-xl mb-3">Saving Amount: <span id="saving-amount">0</span></h3>
+                <h3 class="font-medium text-xl mb-8">Remaining Balance: <span id="remaining-balance">0</span> </h3>
             </div>
         </div>
     </main>
+
     <!-- javascript  -->
     <script src="js/app.js"></script>
 </body>
